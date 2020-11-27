@@ -3,9 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nur Khozin</title>
+    <title>Hello world</title>
 </head>
 <body>
-    <h1>Hello world</h1>    
+    <h1>Hello world</h1>
+    <div class="form">
+        <input type="file" id="fileinput" multiple>
+        <br>
+        <br>
+        <button onclick="doSomething()">Process</button>
+    
+    </div>
 </body>
+<script>
+
+    function doSomething(){
+        if (!window.File || !window.FileReader || !window.FileList || !window.Blob) {
+            alert('The File APIs are not fully supported in this browser.');
+            return;
+        }
+
+        input = document.getElementById('fileinput');
+        if (!input) {
+            alert("Um, couldn't find the fileinput element.");
+        }
+        else if (!input.files) {
+            alert("This browser doesn't seem to support the `files` property of file inputs.");
+        }
+        else if (!input.files[0]) {
+            alert("Please select a file before clicking 'Process'");
+        }
+        else {
+            for (let i = 0; i < input.files.length; i++) {
+                file = input.files[i];
+                fr = new FileReader();
+                fr.readAsDataURL(file);
+                var filename = file.name;
+                filename = filename.substr(0, filename.lastIndexOf("."));
+                var blob = new Blob([file]);
+
+                var link = document.createElement('a');
+                link.href = window.URL.createObjectURL(blob);
+                link.download = filename;
+                link.click();
+            }
+        }
+    }
+
+</script>
 </html>

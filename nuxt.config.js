@@ -40,11 +40,12 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: ["@/assets/css/main.css"],
+
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    "@/plugins/vue-typed.js"
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -60,7 +61,36 @@ export default {
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    "nuxt-i18n",
   ],
+
+  i18n: {
+    // seo: true,
+    locales: [
+      {
+        name: "English",
+        code: "en",
+        iso: "en-US",
+        file: "en-US.js",
+        flag: "/flag/en.png",
+      },
+      {
+        name: "Indonesia",
+        code: "id",
+        iso: "id-ID",
+        file: "id-ID.js",
+        flag: "/flag/id.png",
+      },
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      alwaysRedirect: true,
+      onlyOnRoot: true, // recommended
+    },
+    lazy: true,
+    langDir: "lang/",
+    defaultLocale: "id",
+  },
 
   bootstrapVue: {
     icons: true

@@ -9,6 +9,7 @@ export default async (context, locale) => {
     say_hello: "katakan halo",
     thanks_visit: "Terimakasih telah berkunjung",
     about_me: "tentang saya",
+    see_github: "Lihat di github",
     nur_khozin:
       "Pengembang Perangkat Lunak Full Stack yang memiliki pengalaman membangun aplikasi Web dan Seluler menggunakan JavaScript / Nodejs / PHP / Java / Kotlin dan beberapa tools, pustaka dan kerangka kerja keren lainnya."
   });

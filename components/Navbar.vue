@@ -1,21 +1,19 @@
 <template>
   <div>
-    <b-navbar
-      toggleable="md"
-      class="navbar-top py-0 py-md-1 d-none d-md-block"
-    >
+    <b-navbar toggleable="md" class="navbar-top py-0 py-md-1 d-none d-md-block">
       <b-container>
         <b-navbar-brand to="/" class="d-none d-md-block"
           ><span class="str"><strong>Nur Khozin</strong></span></b-navbar-brand
         >
         <b-collapse id="nav-collapse" is-nav class="d-none d-md-block">
-          
           <b-navbar-nav class="ml-auto">
             <b-nav-item to="/"><span class="str">Home</span></b-nav-item>
-            <b-nav-item to="/"><span class="str">About</span></b-nav-item>
-            <b-nav-item to="/"><span class="str">Skill</span></b-nav-item>
-            <b-nav-item to="/"><span class="str">Portfolio</span></b-nav-item>
-            <b-nav-item to="/"><span class="str">Contact</span></b-nav-item>
+            <!-- <b-nav-item to="/"><span class="str">About</span></b-nav-item> -->
+            <!-- <b-nav-item to="/"><span class="str">Skill</span></b-nav-item> -->
+            <b-nav-item href="https://github.com/annurkhozin/" target="_blank"
+              ><span class="str">Github</span></b-nav-item
+            >
+            <!-- <b-nav-item to="/"><span class="str">Contact</span></b-nav-item> -->
           </b-navbar-nav>
 
           <b-navbar-nav class="ml-auto">
@@ -39,16 +37,9 @@
         <b-nav-item :to="currentLang + 'home'">
           <b-icon-house class="white"></b-icon-house>
         </b-nav-item>
-        <b-nav-item
-          ><b-icon-grid class="white"></b-icon-grid>
-        </b-nav-item>
+        <b-nav-item><b-icon-grid class="white"></b-icon-grid> </b-nav-item>
 
-        <b-nav-item-dropdown
-          right
-          dropup
-          no-caret
-          variant="link"
-        >
+        <b-nav-item-dropdown right dropup no-caret variant="link">
           <template #button-content>
             <b-icon-three-dots-vertical
               class="white"
@@ -83,7 +74,7 @@ export default {
           : "/" + this.$i18n.locale + "/",
       showNavbar: true,
       lastScrollPosition: 0,
-      scrollValue: 0,
+      scrollValue: 0
     };
   },
 
